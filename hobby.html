@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My hobby page</title>
+    
+    <style>
+        body {
+            background-color: rgb(162, 177, 122);
+        }
+        h1 {
+            text-align: center;
+        }
+        h2 {
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            background-color: rgba(255,255,255,0.4);
+            padding: 20px;
+            border: 10px;
+            margin: 0 auto;
+            border-radius: 10px;
+        }
+        img {
+            max-width: 100%;
+        }
+        .bottom-button {
+            display: block;
+            margin: 0 auto;
+            border: 1px solid rgb(162, 177, 122);
+            background: white;
+            font-size: 24px;
+            border-radius: 6px;
+            padding: 10px 15px;
+            transition: all 150ms ease-in-out; 
+            text-align: center;
+        }
+
+        .bottom-button:hover {
+            background: rgb(162, 177, 122);
+            cursor: pointer;
+        }
+        footer {
+            text-align: center;
+            margin: 10px 0;
+            font-size: 18px;
+        }
+        .theme-button {
+            display: block;
+            margin: 0 auto;
+            font-size: 16px;
+            background-color: black;
+            color: white;
+            padding: 5px 8px;
+            border: 1px solid rgb(162, 177, 122);
+            border-radius: 6px;
+        }
+        .theme-button:hover {
+            color: black;
+            background-color: white;
+        }
+        .hiking-intro-picture {
+            border-radius: 10px;
+            transition: all 150ms ease-in-out;
+            background: black;
+        }
+        .hiking-intro-picture:hover {
+            filter: contrast(80%);
+            transform: scale(1.1);
+        }
+        p {
+            font-size: 18px;
+            line-height: 1.5;
+            text-align: center;
+            padding: 40px 10px 30px 10px;
+        }
+        .grid {
+            grid-template-columns: 1fr 1fr 1fr;
+            display: grid;
+            grid-gap: 20px;
+            margin: 15px 0;
+
+        }
+        .grid img {
+            width: 100%;
+            height: 200px;
+            border-radius: 8px;
+            object-fit: cover;
+            transition: all 150ms ease-in-out;
+        }
+        .grid img:hover {
+            transform: scale(2);
+        }
+        .dark {
+            background: rgb(26, 26, 53);
+            color: white;
+        }
+        .dark .container {
+            background: rgba(255,255,255,0.4);
+        }
+        .dark a {
+            color: white;
+        }
+        .theme-div {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="theme-div">
+        <button class="theme-button">Dark theme</button>
+    </div>    
+    <div class="container">
+        <h1>Hiking</h1>
+        <h2>The best hobby out there</h2>
+        <a href="https://en.wikipedia.org/wiki/Hiking" target="_blank">
+            <img class="hiking-intro-picture" src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/143/695/original/woman.jpg?1726482317" alt="woman">
+        </a>
+        <div class="grid">  
+            <img class="hiking-intro-picture" src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/143/696/original/fence.jpg?1726482384" alt="fence">
+            <img class="hiking-intro-picture" src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/143/700/original/forest1.jpg?1726482559" alt="forest">
+            <img class="hiking-intro-picture" src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/143/699/original/leg-view.jpg?1726482532" alt="leg view">
+            <img class="hiking-intro-picture" src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/143/698/original/raj.jpeg?1726482502" alt="raj">           
+            <img class="hiking-intro-picture" src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/143/697/original/tent.jpg?1726482481" alt="tent">            
+            <img class="hiking-intro-picture" src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/143/701/original/shoes.jpg?1726482592" alt="shoes">          
+        </div>
+        <div class="text">
+            <p>Hiking is an outdoor activity that involves walking through natural landscapes, 
+                often on trails in mountains, forests, or along coastlines. It's a great way to 
+                connect with nature, offering fresh air, scenic views, and a break from the busyness 
+                of daily life. As a form of exercise, hiking strengthens muscles, improves cardiovascular
+                health, and enhances mental well-being by reducing stress. It’s also an adaptable activity, 
+                with trails available for all fitness levels, making it accessible to beginners and 
+                seasoned adventurers alike. Hiking can be a solo experience, allowing for quiet reflection, 
+                or a social one when done with friends or groups. It’s a fun hobby because it combines 
+                physical activity with exploration, giving you a sense of adventure as you discover n
+                ew places. Plus, it often provides the satisfaction of reaching a summit or scenic point, 
+                rewarding your effort with breathtaking views.</p>
+        </div>
+        <button class="bottom-button">Go hiking!</button>       
+        <footer>
+            <p>Coded with ♡ by Andrea Brezanova</p>
+        </footer>      
+    </div>    
+    <script>
+        function changeTheme() {
+            let body = document.querySelector("body");
+            // body.classList.toggle("dark");
+
+            if(body.classList.contains("dark")) {
+                body.classList.remove("dark");
+            } else {
+                body.classList.add("dark")
+            }
+        }
+
+        let themeButton = document.querySelector(".theme-button");
+        themeButton.addEventListener("click", changeTheme);
+    </script>
+</body>
+</html>
